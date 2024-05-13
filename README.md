@@ -28,12 +28,12 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
 
-# RR3 Galary
+# T3 Galary
 
 ## TODo
 
-- [ ] MAke it deploy  ( vercel )
-- [ ] Scaffold basic ui wit mock data
+- [ x ] MAke it deploy  ( vercel )
+- [ x ] Scaffold basic ui wit mock data
 - [ ] Actually set uip a database
 - [ ] Attach database to UI
 - [ ] Add Authentication
