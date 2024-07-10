@@ -3,6 +3,8 @@ import { url } from "inspector";
 import Link from "next/link";
 import { db } from "~/server/db";
 
+export const  dynamic = "force-dynamic"
+
 const mock_urls: string[] = [
   "https://utfs.io/f/2e3a5f02-7fc1-497a-9ee5-d82167272c67-jp8mqc.png" , 
   "https://utfs.io/f/f1b386c9-a2ef-42d7-a6cf-850493b7b81f-ohszqv.png" , 
