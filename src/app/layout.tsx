@@ -4,7 +4,7 @@ import { GeistSans } from "geist/font/sans";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
-import { TopNav } from "~/app/_components/topnav";
+import { TopNav } from "./_components/topnav";
 
 export const metadata = {
   title: "T3 Gallery",
