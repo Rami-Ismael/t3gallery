@@ -40,6 +40,7 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 - [ x ] Add Authentication
 - [ ] Add image uplad
 - [ ] "taint" (server-only)
+- [ ]  Use Next/Image component
 - [ ] Errror Managerment ( w / Sentr y )
 - [ ] Routing / oimage page ( parallel route ) 
 - [ ] Analytics ( post hog)
