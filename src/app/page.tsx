@@ -1,16 +1,14 @@
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import {db} from "~/server/db";
 
 export const dynamic = "force-dynamic"; // Force dynamic rendering for this page
 
-
-export default async  function HomePage() {
+async function Images(){
   const image = await db.query.image.findMany({
     orderBy: (model, { desc }) => desc(model.id),
 });
-  //console.log("Posts from DB:", posts);
   return (
-    <main >
       <div className="flex flex-wrap gap-4">
         {[...image , ...image].map((image , index) => (
           <div key={image.id + "-"+index} className="w-48">
@@ -19,6 +17,21 @@ export default async  function HomePage() {
           </div>
         ))}
       </div>
+  )
+}
+export default async  function HomePage() {
+
+  //console.log("Posts from DB:", posts);
+  return (
+    <main >
+      <SignedOut>
+        <div>
+          <div className="h-full w-full text-2xl">Please Sing in above</div>
+        </div>
+      </SignedOut>
+      <SignedIn>
+        <Images />
+      </SignedIn>
     </main>
   );
 }
