@@ -5,13 +5,13 @@ import {db} from "~/server/db";
 export const dynamic = "force-dynamic"; // Force dynamic rendering for this page
 
 async function Images(){
-  const image = await db.query.image.findMany({
+  const images = await db.query.image.findMany({
     orderBy: (model, { desc }) => desc(model.id),
 });
   return (
       <div className="flex flex-wrap gap-4">
-        {[...image , ...image].map((image , index) => (
-          <div key={image.id + "-"+index} className="w-48">
+        {images.map((image) => (
+          <div key={image.id} className="w-48">
             <img src={image.url}/>
             <div> {image.name}</div>
           </div>
