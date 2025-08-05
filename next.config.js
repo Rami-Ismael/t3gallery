@@ -6,6 +6,13 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
+    images: {
+        remotePatterns: [
+            {
+                hostname: "z68hkk8q7p.ufs.sh",
+            }
+        ]
+    },
     typescript: {
         ignoreBuildErrors: true, // Ignore TypeScript errors during build
     },
