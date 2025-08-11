@@ -8,6 +8,7 @@ import { TopNav } from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "T3 Gallery",
@@ -21,7 +22,8 @@ const geist = Geist({
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: Readonly<{ children: React.ReactNode , modal: React.ReactNode }>) {
   return (
     <ClerkProvider>
       <html lang="en" className={`${geist.variable}`}>
@@ -37,6 +39,9 @@ export default function RootLayout({
         <body className="flex flex-col gap-4">
           <TopNav />  
           {children}
+          {modal}
+          <div id="modal-root" />
+          <Toaster richColors position="bottom-right" />
         </body>
       </html>
     </ClerkProvider>
