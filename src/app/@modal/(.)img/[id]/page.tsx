@@ -1,4 +1,6 @@
 import { getImageById } from "~/queries";
+import { Modal } from "./modal";
+import FullPageImageView from "~/components/full-image-page";
 
 export default async function PhotoModal({
   params: { id: photoId },
@@ -10,10 +12,8 @@ export default async function PhotoModal({
     throw new Error("Invalid image ID");
   }
   const image = await getImageById(idAsNumber);
-  return (<div>
-    <h1>{image.name}</h1>
-    <img src={image.url} alt={image.name} />
-    <p>Image ID: {image.id}</p>
-  </div>);
+  return (<Modal>
+    <FullPageImageView params={{ id: idAsNumber }} />
+  </Modal>);
 }
 
